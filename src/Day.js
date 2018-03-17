@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { getMods } from './util';
@@ -53,11 +54,11 @@ const Day = (props) => {
 };
 
 Day.propTypes = {
-  date: React.PropTypes.object.isRequired,
-  dayAgenda: React.PropTypes.bool,
-  dayHeader: React.PropTypes.bool,
-  dayHeaderFormat: React.PropTypes.string,
-  dayFormat: React.PropTypes.string,
+  date: PropTypes.object.isRequired,
+  dayAgenda: PropTypes.bool,
+  dayHeader: PropTypes.bool,
+  dayHeaderFormat: PropTypes.string,
+  dayFormat: PropTypes.string,
   mods: PropTypes.array
 };
 

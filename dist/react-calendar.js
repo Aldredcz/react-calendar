@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("moment"));
+		module.exports = factory(require("react"), require("prop-types"), require("moment"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "moment"], factory);
+		define(["react", "prop-types", "moment"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactCalendar"] = factory(require("react"), require("moment"));
+		exports["ReactCalendar"] = factory(require("react"), require("prop-types"), require("moment"));
 	else
-		root["ReactCalendar"] = factory(root["React"], root["moment"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
+		root["ReactCalendar"] = factory(root["React"], root["prop-types"], root["moment"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _Month = __webpack_require__(6);
+	var _Month = __webpack_require__(7);
 
 	Object.defineProperty(exports, 'Month', {
 	  enumerable: true,
@@ -78,7 +78,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _Week = __webpack_require__(8);
+	var _Week = __webpack_require__(9);
 
 	Object.defineProperty(exports, 'Week', {
 	  enumerable: true,
@@ -87,7 +87,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _Day = __webpack_require__(9);
+	var _Day = __webpack_require__(10);
 
 	Object.defineProperty(exports, 'Day', {
 	  enumerable: true,
@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _util = __webpack_require__(5);
+	var _util = __webpack_require__(6);
 
 	Object.defineProperty(exports, 'util', {
 	  enumerable: true,
@@ -105,7 +105,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _dateUtils = __webpack_require__(7);
+	var _dateUtils = __webpack_require__(8);
 
 	Object.defineProperty(exports, 'dateUtils', {
 	  enumerable: true,
@@ -116,9 +116,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -132,17 +132,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _moment2 = __webpack_require__(3);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _moment2 = __webpack_require__(4);
 
 	var _moment3 = _interopRequireDefault(_moment2);
 
-	var _classnames = __webpack_require__(4);
+	var _classnames = __webpack_require__(5);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _util = __webpack_require__(5);
+	var _util = __webpack_require__(6);
 
-	var _Month = __webpack_require__(6);
+	var _Month = __webpack_require__(7);
 
 	var _Month2 = _interopRequireDefault(_Month);
 
@@ -160,7 +164,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Calendar(props, context) {
 	    _classCallCheck(this, Calendar);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Calendar).call(this, props, context));
+	    return _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props, context));
 	  }
 
 	  _createClass(Calendar, [{
@@ -224,12 +228,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(_react.Component);
 
 	Calendar.propTypes = {
-	  startDate: _react.PropTypes.object.isRequired,
-	  endDate: _react.PropTypes.object.isRequired,
-	  weekNumbers: _react.PropTypes.bool,
-	  locale: _react.PropTypes.string,
-	  month: _react.PropTypes.array,
-	  yearHeaderFormat: _react.PropTypes.string
+	  startDate: _propTypes2.default.object.isRequired,
+	  endDate: _propTypes2.default.object.isRequired,
+	  weekNumbers: _propTypes2.default.bool,
+	  locale: _propTypes2.default.string,
+	  month: _propTypes2.default.array,
+	  yearHeaderFormat: _propTypes2.default.string
 	};
 	Calendar.defaultProps = {
 	  locale: 'en',
@@ -237,21 +241,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	exports.default = Calendar;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  Copyright (c) 2016 Jed Watson.
@@ -303,9 +313,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}());
 
 
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -386,8 +396,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, []);
 	};
 
-	// const getModsWithSingleDate = (mods) =>
-	// mods.filter((mod) => !mod.startDate && mod.date)
+	var getModsWithSingleDate = function getModsWithSingleDate(mods) {
+	  return mods.filter(function (mod) {
+	    return !mod.startDate && mod.date;
+	  });
+	};
 
 	var getModsWithoutDate = function getModsWithoutDate(mods) {
 	  return mods.filter(function (mod) {
@@ -396,7 +409,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	var getModsByCompType = exports.getModsByCompType = function getModsByCompType(componentType, mods) {
-	  if (!mods) {
+	  if (!Array.isArray(mods)) {
 	    return [];
 	  }
 
@@ -428,9 +441,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return { clsMods: [].concat(_toConsumableArray(clsMods), _toConsumableArray(clsCompMods)), events: events };
 	};
 
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -444,19 +457,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(4);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _classnames = __webpack_require__(5);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _dateUtils = __webpack_require__(7);
+	var _dateUtils = __webpack_require__(8);
 
-	var _util = __webpack_require__(5);
+	var _util = __webpack_require__(6);
 
-	var _Week = __webpack_require__(8);
+	var _Week = __webpack_require__(9);
 
 	var _Week2 = _interopRequireDefault(_Week);
 
-	var _Day = __webpack_require__(9);
+	var _Day = __webpack_require__(10);
 
 	var _Day2 = _interopRequireDefault(_Day);
 
@@ -465,6 +482,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var clsPrefix = 'rc-Month';
 
 	var renderWeekHeader = function renderWeekHeader(props) {
+	  if (!props.weekdayNames) {
+	    return null;
+	  }
+
 	  return _react2.default.createElement(
 	    'div',
 	    { className: clsPrefix + '-weekdays' },
@@ -495,14 +516,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	var Month = function Month(props) {
-	  var date = props.date;
-	  var weekNumbers = props.weekNumbers;
+	  var date = props.date,
+	      weekNumbers = props.weekNumbers;
 
 	  var edges = (0, _dateUtils.monthEdges)(date);
 
-	  var mods = props.mods;
-	  var day = props.day;
-	  var week = props.week;
+	  var mods = props.mods,
+	      day = props.day,
+	      week = props.week;
 
 	  var clsMods = void 0,
 	      events = void 0;
@@ -551,11 +572,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Month.propTypes = {
-	  monthNames: _react.PropTypes.bool,
-	  monthNameFormat: _react.PropTypes.string,
-	  weekdayNames: _react.PropTypes.bool,
-	  weekdayFormat: _react.PropTypes.string,
-	  mod: _react.PropTypes.object
+	  monthNames: _propTypes2.default.bool,
+	  monthNameFormat: _propTypes2.default.string,
+	  weekdayNames: _propTypes2.default.bool,
+	  weekdayFormat: _propTypes2.default.string,
+	  mod: _propTypes2.default.object
 	};
 
 	Month.defaultProps = {
@@ -567,9 +588,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = Month;
 
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -580,7 +601,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.monthEdges = monthEdges;
 	exports.daysOfWeek = daysOfWeek;
 
-	var _moment = __webpack_require__(3);
+	var _moment = __webpack_require__(4);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -640,9 +661,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	}
 
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -656,15 +677,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(4);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _classnames = __webpack_require__(5);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _util = __webpack_require__(5);
+	var _util = __webpack_require__(6);
 
-	var _dateUtils = __webpack_require__(7);
+	var _dateUtils = __webpack_require__(8);
 
-	var _Day = __webpack_require__(9);
+	var _Day = __webpack_require__(10);
 
 	var _Day2 = _interopRequireDefault(_Day);
 
@@ -703,10 +728,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	var Week = function Week(props) {
-	  var mods = props.mods;
-	  var date = props.date;
-	  var clsMods = void 0;var events = void 0;var week = void 0;var day = props.day;
-
+	  var mods = props.mods,
+	      date = props.date;
+	  var clsMods = void 0,
+	      events = void 0,
+	      week = void 0,
+	      day = props.day;
 
 	  week = (0, _util.getModsByCompType)('week', mods);
 	  var modifiers = (0, _util.getMods)(week, date, clsPrefix, 'week');
@@ -744,10 +771,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Week.propTypes = {
-	  weekHeader: _react.PropTypes.bool,
-	  weekNumbers: _react.PropTypes.bool,
-	  weekNumberFormat: _react.PropTypes.string,
-	  weekdayFormat: _react.PropTypes.string
+	  weekHeader: _propTypes2.default.bool,
+	  weekNumbers: _propTypes2.default.bool,
+	  weekNumberFormat: _propTypes2.default.string,
+	  weekdayFormat: _propTypes2.default.string
 	};
 
 	Week.defaultProps = {
@@ -759,9 +786,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = Week;
 
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -775,11 +802,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(4);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _classnames = __webpack_require__(5);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _util = __webpack_require__(5);
+	var _util = __webpack_require__(6);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -811,9 +842,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var Day = function Day(props) {
 	  var clsPrefix = 'rc-Day';
-	  var date = props.date;
-	  var mods = props.mods;
-	  var outside = props.outside;
+	  var date = props.date,
+	      mods = props.mods,
+	      outside = props.outside;
 
 	  var modifiers = (0, _util.getMods)(mods, date, clsPrefix, 'day');
 
@@ -837,12 +868,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Day.propTypes = {
-	  date: _react2.default.PropTypes.object.isRequired,
-	  dayAgenda: _react2.default.PropTypes.bool,
-	  dayHeader: _react2.default.PropTypes.bool,
-	  dayHeaderFormat: _react2.default.PropTypes.string,
-	  dayFormat: _react2.default.PropTypes.string,
-	  mods: _react.PropTypes.array
+	  date: _propTypes2.default.object.isRequired,
+	  dayAgenda: _propTypes2.default.bool,
+	  dayHeader: _propTypes2.default.bool,
+	  dayHeaderFormat: _propTypes2.default.string,
+	  dayFormat: _propTypes2.default.string,
+	  mods: _propTypes2.default.array
 	};
 
 	Day.defaultProps = {
@@ -854,7 +885,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = Day;
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;

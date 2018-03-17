@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { monthEdges, weeksOfMonth, daysOfWeek } from './dateUtils';
@@ -9,11 +10,11 @@ import Day from './Day';
 const clsPrefix = 'rc-Month';
 
 const renderWeekHeader = (props) => {
+  if (!props.weekdayNames) {
+    return null;
+  }
+
   return (
-    if (!props.weekdayNames) {
-      return null;
-    }
-    
     <div className={`${clsPrefix}-weekdays`}>
       {
         daysOfWeek(props.date).map((weekday, i) =>

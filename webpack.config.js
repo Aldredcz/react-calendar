@@ -25,6 +25,7 @@ var config = {
     ]
   },
   externals: {
+    'prop-types': 'prop-types',
     react: {
       root: 'React',
       commonjs: 'react',
